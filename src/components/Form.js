@@ -96,7 +96,7 @@ class Form extends React.Component {
             }
 
           response.json().then(function (data) {
-                alert("Data Inserted Correctly");
+                console.log("Data Inserted Correctly");
                 console.log(data);
             });
         })
@@ -122,6 +122,7 @@ class Form extends React.Component {
     //this is the return function that returns the html that helps create the app
     return (
       //a div class in order to have the specific section in question
+      <div className ="form">
          <form onSubmit = {this.handleSubmit}>
            <label>
              <h3>What is the Barname: <br/></h3>
@@ -190,6 +191,7 @@ class Form extends React.Component {
               <input type = "text" name ="barLocation" onChange={this.handleChange.bind(this)} value={this.state.barLocation} /><br/>
             <input type="submit" value="Submit"/>
         </form>
+        </div>
   );
   }
 }

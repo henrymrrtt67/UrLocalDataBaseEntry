@@ -1,7 +1,18 @@
 .slidecontainer {
   width: 100%;
 }
-
+.form{
+  padding-top:3%;
+  padding-bottom: 3%;
+  margin-left:25%;
+  width: 50%;
+  margin-top: 2%;
+  background-color: teal;
+}
+body{
+  background-image: url("photos/beerPour.gif");
+  background-size:cover;
+}
 .slider {
   -webkit-appearance: none;
   width: 50%;

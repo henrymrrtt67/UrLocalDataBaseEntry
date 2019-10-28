@@ -17,9 +17,11 @@ class App extends React.Component {
       //a div class in order to have the specific section in question
       <div className="App">
         <header>
-         <Form />
-       </header>
-    </div>
+        </header>
+        <body>
+          <Form />
+        </body>
+      </div>
   );
   }
 }
