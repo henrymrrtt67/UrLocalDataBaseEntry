@@ -29,9 +29,13 @@ class Form extends React.Component {
           }),
           {}
         ),
-      	barname: "",
-  		craftSlide: 5,
-  		complexity: 5,
+        barname: "",
+        street_num: 0,
+        street_name: "",
+        suburb: "",
+        city: "",
+  		  craftSlide: 5,
+  		  complexity: 5,
       	barLocation: "",
       	lqMeal: 0,
       	lqBeer: 0,
@@ -66,6 +70,7 @@ class Form extends React.Component {
       event.preventDefault();
       var craftSlide = parseInt(this.state.craftSlide, 10);
       var complexity = parseInt(this.state.craftSlide, 10);
+      var street_num = parseInt(this.state.street_num);
       var lqBeer = parseInt(this.state.lqBeer);
       var lqMeal = parseInt(this.state.lqMeal);
       var uqMeal = parseInt(this.state.uqMeal);
@@ -77,7 +82,10 @@ class Form extends React.Component {
           'content-type':'application/json'},
     		body: JSON.stringify({
           "barName": this.state.barname,
-          "barLocation": this.state.barLocation,
+          "street_num": street_num,
+          "street_name": this.state.street_name,
+          "suburb": this.state.suburb,
+          "city": this.state.city,
   				"craftSlide": craftSlide,
   				"complexity": complexity,
   				"wineCheck": this.state.checkboxes["Wine"],
@@ -127,7 +135,22 @@ class Form extends React.Component {
            <label>
              <h3>What is the Barname: <br/></h3>
               <input type = "text" name ="barname" onChange={this.handleChange.bind(this)} value={this.state.barname} />
-            </label>
+            </label><br />
+            Street Number: <br />
+            <input type="number" 
+           	name="street_num" 
+           	onChange={this.handleChange.bind(this)}
+           	value = {this.state.street_num}
+           	/> <br />
+             Street Name: <br />
+            <input type = "text" name ="street_name" onChange={this.handleChange.bind(this)} value={this.state.street_name} />
+            <br />
+            Suburb: <br />
+            <input type = "text" name ="suburb" onChange={this.handleChange.bind(this)} value={this.state.suburb} />
+            <br />
+            City:<br />
+            <input type = "text" name ="city" onChange={this.handleChange.bind(this)} value={this.state.city} />
+
             <div className = "slideContainer">
               <h3> Craft Beer </h3>
               <input type="range" min="1" max="10" className="slider"
@@ -187,8 +210,6 @@ class Form extends React.Component {
            	value = {this.state.uqBeer}
            	/> 
            	<br/>
-             <h2>Where is the Bar Located: <br/></h2>
-              <input type = "text" name ="barLocation" onChange={this.handleChange.bind(this)} value={this.state.barLocation} /><br/>
             <input type="submit" value="Submit"/>
         </form>
         </div>
